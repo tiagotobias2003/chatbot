@@ -16,6 +16,10 @@ class App < Sinatra::Base
   post '/webhook' do
     request.body.rewind
     result = JSON.parse(request.body.read)["queryResult"]
+
+    p "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+    p result
+    p "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
  
     if result["contexts"].present?
       response = InterpretService.call(result["action"], result["contexts"][0]["parameters"])
@@ -33,5 +37,5 @@ class App < Sinatra::Base
       }
     }.to_json
   end
-  
+
 end
