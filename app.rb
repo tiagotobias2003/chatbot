@@ -26,6 +26,10 @@ class App < Sinatra::Base
     else
       response = InterpretService.call(result["action"], result["parameters"])
     end
+
+    p "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
+    p response
+    p "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
  
     content_type :json, charset: 'utf-8'
     {
