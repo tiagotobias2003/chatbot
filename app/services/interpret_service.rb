@@ -10,7 +10,7 @@ class InterpretService
     when "help"
       HelpService.call()
     else
-      "Não compreendi o seu desejo"
+      "Não compreendi o que deseja... Preciso de mais informações!!!"
     end
   end
 end
